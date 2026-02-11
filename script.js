@@ -80,3 +80,25 @@ const countObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
+
+// ===========================
+// Theme toggle (dark/light mode)
+// ===========================
+(function() {
+  const saved = localStorage.getItem('ensuredit-theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ensuredit-theme', next);
+  }
+
+  // Bind all theme toggle buttons (desktop + mobile)
+  document.querySelectorAll('.theme-toggle, .mobile-theme-toggle').forEach(btn => {
+    btn.addEventListener('click', toggleTheme);
+  });
+})();
