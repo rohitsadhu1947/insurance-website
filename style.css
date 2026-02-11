@@ -787,8 +787,10 @@ a { color: inherit; text-decoration: none; }
   display: block;
   transition: filter 0.3s ease;
 }
-[data-theme="light"] .nav-logo-img {
-  filter: brightness(0) saturate(100%) invert(8%) sepia(20%) saturate(2000%) hue-rotate(200deg) brightness(95%);
+/* Light mode: invert white logo to dark navy */
+[data-theme="light"] .nav-logo-img,
+[data-theme="light"] .footer-logo-img {
+  filter: brightness(0.1) contrast(1.2);
 }
 
 .nav-links {
@@ -1711,9 +1713,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   transition: filter 0.3s ease;
 }
-[data-theme="light"] .footer-logo-img {
-  filter: brightness(0) saturate(100%) invert(8%) sepia(20%) saturate(2000%) hue-rotate(200deg) brightness(95%);
-}
+/* light mode filter handled alongside nav-logo-img above */
 .footer-brand p {
   font-size: 14px;
   color: var(--muted);
