@@ -790,7 +790,7 @@ a { color: inherit; text-decoration: none; }
 /* Light mode: convert white logo → brand navy #0f2972 */
 [data-theme="light"] .nav-logo-img,
 [data-theme="light"] .footer-logo-img {
-  filter: invert(14%) sepia(80%) saturate(3500%) hue-rotate(216deg) brightness(70%) contrast(115%);
+  filter: invert(62%) sepia(60%) saturate(7900%) hue-rotate(222deg) brightness(45%);
 }
 
 .nav-links {
