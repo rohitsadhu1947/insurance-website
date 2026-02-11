@@ -89,9 +89,7 @@
 [data-theme="light"] .nav.scrolled {
   background: rgba(232,237,245,0.92);
 }
-[data-theme="light"] .nav-logo {
-  color: #0F1225;
-}
+/* nav-logo-img handled via filter in base styles */
 [data-theme="light"] .nav-link {
   color: #5A6380;
 }
@@ -255,12 +253,7 @@
   background: #C9D1E5;
   border-top-color: rgba(58,72,120,0.1);
 }
-[data-theme="light"] .footer-logo {
-  color: #0F1225;
-}
-[data-theme="light"] .footer-logo span {
-  color: #3D5AF1;
-}
+/* footer-logo-img handled via filter in base styles */
 [data-theme="light"] .footer-col h5 {
   color: #0F1225;
 }
@@ -334,9 +327,10 @@
   filter: saturate(0.8);
 }
 
-/* --- Product hero visual SVG --- */
+/* --- Product hero visual SVG — complete overhaul for light mode --- */
 [data-theme="light"] .product-hero-visual svg {
-  filter: drop-shadow(0 12px 40px rgba(30,40,80,0.12));
+  filter: drop-shadow(0 12px 40px rgba(30,40,80,0.15));
+  border-radius: 16px;
 }
 
 /* --- Gradient text — deeper for frost contrast --- */
@@ -356,63 +350,269 @@
   background: linear-gradient(180deg, #DDE3F0 0%, #E8EDF5 100%);
 }
 
-/* ---- SVG Dashboard Overrides ---- */
-/* Main frame — frost glass */
-[data-theme="light"] svg rect[fill="#12163A"],
-[data-theme="light"] svg rect[fill="#0D1033"],
-[data-theme="light"] svg rect[fill="#0A0E27"] {
-  fill: #EFF2F9;
-  stroke: rgba(58,72,120,0.12);
+/* ============================================
+   SVG DASHBOARD OVERRIDES — COMPREHENSIVE
+   Covers ALL inline SVG colors across all 6
+   product pages for clean light mode rendering
+   ============================================ */
+
+/* --- 1. FRAME BACKGROUNDS --- */
+/* Main dashboard frame — cool steel card */
+[data-theme="light"] .product-hero-visual svg rect[fill="#12163A"],
+[data-theme="light"] .product-hero-visual svg rect[fill="#0D1033"],
+[data-theme="light"] .product-hero-visual svg rect[fill="#0A0E27"] {
+  fill: #E2E8F4;
+  stroke: rgba(58,72,120,0.15);
   stroke-width: 1;
 }
-/* Card/panel backgrounds — cooler steel */
-[data-theme="light"] svg rect[fill="#1A1F4A"],
-[data-theme="light"] svg rect[fill="#181D45"],
-[data-theme="light"] svg rect[fill="#161B42"],
-[data-theme="light"] svg rect[fill="#1E2350"] {
-  fill: #DDE3F0;
+/* Card/panel backgrounds — frost glass panels */
+[data-theme="light"] .product-hero-visual svg rect[fill="#1A1F4A"],
+[data-theme="light"] .product-hero-visual svg rect[fill="#181D45"],
+[data-theme="light"] .product-hero-visual svg rect[fill="#161B42"],
+[data-theme="light"] .product-hero-visual svg rect[fill="#1E2350"] {
+  fill: #F0F3FA;
   stroke: rgba(58,72,120,0.1);
   stroke-width: 0.5;
 }
-/* Text */
-[data-theme="light"] svg text[fill="#8892B0"] {
-  fill: #5A6380;
-}
-[data-theme="light"] svg text[fill="#E8ECF4"],
-[data-theme="light"] svg text[fill="#fff"],
-[data-theme="light"] svg text[fill="white"] {
+
+/* --- 2. TEXT COLORS --- */
+/* White text → dark charcoal */
+[data-theme="light"] .product-hero-visual svg text[fill="#FFFFFF"],
+[data-theme="light"] .product-hero-visual svg text[fill="#ffffff"],
+[data-theme="light"] .product-hero-visual svg text[fill="white"] {
   fill: #1A1D2E;
 }
-/* Lines/dividers */
-[data-theme="light"] svg line[stroke="rgba(79,110,247,0.15)"],
-[data-theme="light"] svg line[stroke="rgba(79,110,247,0.1)"],
-[data-theme="light"] svg line[stroke="rgba(79,110,247,0.08)"] {
-  stroke: rgba(58,72,120,0.1);
+/* Light blue/purple text → medium blue */
+[data-theme="light"] .product-hero-visual svg text[fill="#CCD6F6"] {
+  fill: #3D5070;
 }
-/* SVG rect strokes — boost all for frost visibility */
-[data-theme="light"] svg rect[stroke="rgba(79,110,247,0.15)"],
-[data-theme="light"] svg rect[stroke="rgba(79,110,247,0.1)"] {
-  stroke: rgba(61,90,241,0.25);
+/* Muted gray → darker muted for contrast */
+[data-theme="light"] .product-hero-visual svg text[fill="#8892B0"] {
+  fill: #4A5270;
 }
-[data-theme="light"] svg rect[stroke="rgba(0,214,143,0.15)"],
-[data-theme="light"] svg rect[stroke="rgba(0,214,143,0.1)"] {
-  stroke: rgba(5,150,105,0.35);
+/* Light gray text → dark */
+[data-theme="light"] .product-hero-visual svg text[fill="#E8ECF4"] {
+  fill: #1A1D2E;
 }
-[data-theme="light"] svg rect[stroke="rgba(255,107,107,0.15)"],
-[data-theme="light"] svg rect[stroke="rgba(255,107,107,0.1)"] {
-  stroke: rgba(220,38,38,0.3);
+/* Dark text on colored buttons — keep dark */
+[data-theme="light"] .product-hero-visual svg text[fill="#12163A"] {
+  fill: #0F1225;
 }
-[data-theme="light"] svg rect[stroke="rgba(108,92,231,0.15)"],
-[data-theme="light"] svg rect[stroke="rgba(108,92,231,0.1)"] {
-  stroke: rgba(124,58,237,0.3);
+/* Colored accent text — boost saturation */
+[data-theme="light"] .product-hero-visual svg text[fill="#4F6EF7"] {
+  fill: #2B4FE0;
 }
-[data-theme="light"] svg rect[stroke="rgba(255,159,67,0.15)"],
-[data-theme="light"] svg rect[stroke="rgba(255,159,67,0.1)"] {
-  stroke: rgba(217,119,6,0.3);
+[data-theme="light"] .product-hero-visual svg text[fill="#00D68F"] {
+  fill: #059669;
 }
-[data-theme="light"] svg rect[stroke="rgba(10,189,227,0.15)"],
-[data-theme="light"] svg rect[stroke="rgba(10,189,227,0.1)"] {
-  stroke: rgba(2,132,199,0.3);
+[data-theme="light"] .product-hero-visual svg text[fill="#FF9F43"] {
+  fill: #C97B0A;
+}
+[data-theme="light"] .product-hero-visual svg text[fill="#0ABDE3"] {
+  fill: #0284C7;
+}
+[data-theme="light"] .product-hero-visual svg text[fill="#6C5CE7"] {
+  fill: #5B21B6;
+}
+[data-theme="light"] .product-hero-visual svg text[fill="#FF6B6B"] {
+  fill: #DC2626;
+}
+
+/* --- 3. LOW-OPACITY BACKGROUND OVERLAYS --- */
+/* These are nearly invisible on light bg — boost significantly */
+/* Blue overlays */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.06)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.08)"] {
+  fill: rgba(61,90,241,0.08);
+}
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.12)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.15)"] {
+  fill: rgba(61,90,241,0.12);
+}
+/* Green overlays */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.06)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.08)"] {
+  fill: rgba(5,150,105,0.08);
+}
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.12)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.15)"] {
+  fill: rgba(5,150,105,0.12);
+}
+/* Orange overlays */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,159,67,0.08)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,159,67,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,159,67,0.12)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,159,67,0.15)"] {
+  fill: rgba(217,119,6,0.1);
+}
+/* Cyan overlays */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(10,189,227,0.08)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(10,189,227,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(10,189,227,0.12)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(10,189,227,0.15)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(10,189,227,0.25)"] {
+  fill: rgba(2,132,199,0.1);
+}
+/* Purple overlays */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(108,92,231,0.06)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(108,92,231,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(108,92,231,0.12)"] {
+  fill: rgba(124,58,237,0.1);
+}
+/* Red overlays */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,107,107,0.06)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,107,107,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,107,107,0.12)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(255,107,107,0.15)"] {
+  fill: rgba(220,38,38,0.08);
+}
+/* Dark overlay for code blocks — use light steel instead */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,0,0,0.25)"] {
+  fill: rgba(30,40,80,0.06);
+}
+
+/* --- 4. CIRCLE COLORS --- */
+/* Status circles & green indicators — keep but darken */
+[data-theme="light"] .product-hero-visual svg circle[fill="#00D68F"] {
+  fill: #059669;
+}
+[data-theme="light"] .product-hero-visual svg circle[fill="#FF6B6B"] {
+  fill: #EF4444;
+}
+[data-theme="light"] .product-hero-visual svg circle[fill="#FF9F43"] {
+  fill: #F59E0B;
+}
+[data-theme="light"] .product-hero-visual svg circle[fill="#0ABDE3"] {
+  fill: #0284C7;
+}
+[data-theme="light"] .product-hero-visual svg circle[fill="#4F6EF7"] {
+  fill: #3D5AF1;
+}
+[data-theme="light"] .product-hero-visual svg circle[fill="#6C5CE7"] {
+  fill: #7C3AED;
+}
+/* Low-opacity green circle backgrounds */
+[data-theme="light"] .product-hero-visual svg circle[fill="rgba(0,214,143,0.12)"],
+[data-theme="light"] .product-hero-visual svg circle[fill="rgba(0,214,143,0.15)"] {
+  fill: rgba(5,150,105,0.12);
+}
+/* Low-opacity blue circle backgrounds */
+[data-theme="light"] .product-hero-visual svg circle[fill="rgba(79,110,247,0.12)"],
+[data-theme="light"] .product-hero-visual svg circle[fill="rgba(79,110,247,0.15)"] {
+  fill: rgba(61,90,241,0.12);
+}
+
+/* --- 5. LINE/DIVIDER STROKES --- */
+/* Gray dividers — more visible on light */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(136,146,176,0.15)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(136,146,176,0.08)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(136,146,176,0.2)"] {
+  stroke: rgba(58,72,120,0.15);
+}
+/* Blue accent dividers */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(79,110,247,0.15)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(79,110,247,0.1)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(79,110,247,0.08)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(79,110,247,0.3)"] {
+  stroke: rgba(61,90,241,0.18);
+}
+/* Green accent dividers */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(0,214,143,0.3)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(0,214,143,0.15)"] {
+  stroke: rgba(5,150,105,0.2);
+}
+/* Orange accent dividers */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(255,159,67,0.3)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(255,159,67,0.15)"] {
+  stroke: rgba(217,119,6,0.2);
+}
+/* Cyan accent dividers */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(10,189,227,0.3)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(10,189,227,0.15)"] {
+  stroke: rgba(2,132,199,0.2);
+}
+/* Purple accent dividers */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(108,92,231,0.3)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(108,92,231,0.15)"] {
+  stroke: rgba(124,58,237,0.2);
+}
+/* Red accent dividers */
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(255,107,107,0.3)"],
+[data-theme="light"] .product-hero-visual svg line[stroke="rgba(255,107,107,0.1)"] {
+  stroke: rgba(220,38,38,0.2);
+}
+
+/* --- 6. RECT BORDER STROKES --- */
+/* Blue rect borders */
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(79,110,247,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(79,110,247,0.15)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(79,110,247,0.2)"] {
+  stroke: rgba(61,90,241,0.2);
+}
+/* Green rect borders */
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(0,214,143,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(0,214,143,0.12)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(0,214,143,0.15)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(0,214,143,0.2)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(0,214,143,0.25)"] {
+  stroke: rgba(5,150,105,0.25);
+}
+/* Red rect borders */
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(255,107,107,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(255,107,107,0.15)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(255,107,107,0.2)"] {
+  stroke: rgba(220,38,38,0.2);
+}
+/* Purple rect borders */
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(108,92,231,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(108,92,231,0.15)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(108,92,231,0.25)"] {
+  stroke: rgba(124,58,237,0.2);
+}
+/* Orange rect borders */
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(255,159,67,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(255,159,67,0.15)"] {
+  stroke: rgba(217,119,6,0.2);
+}
+/* Cyan rect borders */
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(10,189,227,0.1)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(10,189,227,0.15)"],
+[data-theme="light"] .product-hero-visual svg rect[stroke="rgba(10,189,227,0.2)"] {
+  stroke: rgba(2,132,199,0.25);
+}
+
+/* --- 7. POLYLINE CHART STROKES --- */
+[data-theme="light"] .product-hero-visual svg polyline[stroke="#0ABDE3"] {
+  stroke: #0284C7;
+}
+[data-theme="light"] .product-hero-visual svg polyline[stroke="#4F6EF7"] {
+  stroke: #3D5AF1;
+}
+
+/* --- 8. PROGRESS BAR FILLS --- */
+/* Higher-opacity accent fills (0.3-0.9) — keep but darken base */
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.3)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.5)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(79,110,247,0.8)"] {
+  filter: saturate(1.3) brightness(0.85);
+}
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.3)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.5)"],
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.9)"] {
+  filter: saturate(1.3) brightness(0.85);
+}
+
+/* --- 9. SOLID ACCENT RECT FILLS — keep as-is, they're already vivid --- */
+/* #00D68F, #4F6EF7, #FF9F43 etc. buttons stay solid on frost */
+
+/* --- 10. GREEN ACCENT SOLID fills get slightly darker --- */
+[data-theme="light"] .product-hero-visual svg rect[fill="#00D68F"] {
+  fill: #059669;
+}
+[data-theme="light"] .product-hero-visual svg rect[fill="rgba(0,214,143,0.6)"] {
+  fill: rgba(5,150,105,0.7);
 }
 
 /* --- Scrollbar --- */
@@ -577,12 +777,19 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
 }
 .nav-logo {
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--white);
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
-.nav-logo span { color: var(--accent); }
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+[data-theme="light"] .nav-logo-img {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(20%) saturate(2000%) hue-rotate(200deg) brightness(95%);
+}
 
 .nav-links {
   display: flex;
@@ -1496,12 +1703,17 @@ a { color: inherit; text-decoration: none; }
   max-width: 300px;
 }
 .footer-logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--white);
   margin-bottom: 12px;
 }
-.footer-logo span { color: var(--accent); }
+.footer-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+[data-theme="light"] .footer-logo-img {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(20%) saturate(2000%) hue-rotate(200deg) brightness(95%);
+}
 .footer-brand p {
   font-size: 14px;
   color: var(--muted);
