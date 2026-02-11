@@ -187,8 +187,42 @@
           </div>
 
           <div class="form-group">
+            <label style="margin-bottom:12px; display:block;">Products of Interest</label>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(79,110,247,0.15); background:rgba(79,110,247,0.04); transition: all 0.2s;">
+                <input type="checkbox" name="products" value="ICE" style="accent-color:var(--accent); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">ICE</span>
+              </label>
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(0,214,143,0.15); background:rgba(0,214,143,0.04); transition: all 0.2s;">
+                <input type="checkbox" name="products" value="Enbed" style="accent-color:var(--green); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">Enbed</span>
+              </label>
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(10,189,227,0.15); background:rgba(10,189,227,0.04); transition: all 0.2s;">
+                <input type="checkbox" name="products" value="Enlyt" style="accent-color:var(--cyan); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">Enlyt</span>
+              </label>
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(79,110,247,0.15); background:rgba(79,110,247,0.04); transition: all 0.2s;">
+                <input type="checkbox" name="products" value="BI & Sales Ops" style="accent-color:var(--accent); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">BI & Sales Ops</span>
+              </label>
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,107,107,0.15); background:rgba(255,107,107,0.04); transition: all 0.2s;">
+                <input type="checkbox" name="products" value="ScreenGuard" style="accent-color:var(--red); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">ScreenGuard</span>
+              </label>
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(108,92,231,0.15); background:rgba(108,92,231,0.04); transition: all 0.2s;">
+                <input type="checkbox" name="products" value="AI Agents" style="accent-color:var(--accent2); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">AI Agents</span>
+              </label>
+              <label class="product-check" style="display:flex; align-items:center; gap:8px; cursor:pointer; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,159,67,0.15); background:rgba(255,159,67,0.04); grid-column: span 2; transition: all 0.2s;">
+                <input type="checkbox" name="products" value="Custom Requirement" id="customCheck" style="accent-color:var(--orange); width:16px; height:16px;">
+                <span style="font-size:13px; color:var(--white); font-weight:600;">Custom Product / Integration Requirement</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your requirements — products of interest, scale, timeline, and any specific challenges you're looking to solve."></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your requirements — scale, timeline, and any specific challenges you're looking to solve."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%; justify-content:center;">Submit Request</button>
@@ -312,14 +346,19 @@
       submitBtn.textContent = 'Sending...';
       errorDiv.style.display = 'none';
 
+      // Collect selected products
+      const selectedProducts = Array.from(document.querySelectorAll('input[name="products"]:checked'))
+        .map(cb => cb.value).join(', ') || 'None selected';
+
       const formData = {
         name: document.getElementById('fullName').value,
         company: document.getElementById('company').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
         region: document.getElementById('region').value,
+        'products interested': selectedProducts,
         message: document.getElementById('message').value,
-        _subject: 'New Demo Request from Ensuredit Website',
+        _subject: 'New Demo Request from Ensuredit Website — ' + selectedProducts,
         _template: 'box',
         _captcha: 'false'
       };
@@ -357,7 +396,8 @@
           'Company: ' + formData.company + '\n' +
           'Email: ' + formData.email + '\n' +
           'Phone: ' + formData.phone + '\n' +
-          'Region: ' + formData.region + '\n\n' +
+          'Region: ' + formData.region + '\n' +
+          'Products Interested: ' + selectedProducts + '\n\n' +
           'Message:\n' + formData.message
         );
         window.location.href = 'mailto:hello@ensuredit.com?subject=' + subject + '&body=' + body;
