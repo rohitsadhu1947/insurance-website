@@ -785,13 +785,13 @@ a { color: inherit; text-decoration: none; }
   height: 32px;
   width: auto;
   display: block;
-  transition: filter 0.3s ease;
 }
-/* Light mode: invert white logo to dark navy */
-[data-theme="light"] .nav-logo-img,
-[data-theme="light"] .footer-logo-img {
-  filter: brightness(0.1) contrast(1.2);
-}
+
+/* --- Logo dark/light mode toggle --- */
+.logo-dark-mode { display: block; }
+.logo-light-mode { display: none; }
+[data-theme="light"] .logo-dark-mode { display: none; }
+[data-theme="light"] .logo-light-mode { display: block; }
 
 .nav-links {
   display: flex;
