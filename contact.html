@@ -33,8 +33,20 @@
 <script>
   (function(){var t=localStorage.getItem('ensuredit-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
 </script>
+<style>
+  /* Contact page: compact hero so the form is visible above the fold */
+  .contact-page .product-hero {
+    min-height: auto;
+    padding: 120px 24px 48px;
+  }
+  @media (max-width: 768px) {
+    .contact-page .product-hero {
+      padding: 100px 20px 36px;
+    }
+  }
+</style>
 </head>
-<body>
+<body class="contact-page">
 
 <!-- NAV -->
 <nav class="nav">
