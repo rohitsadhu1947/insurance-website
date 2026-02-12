@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="public/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+<title>Developer Documentation | Ensuredit</title>
+<meta name="description" content="API and SDK documentation for Ensuredit's insurance infrastructure platform. Integrate embedded insurance, quoting, underwriting, and distribution APIs.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPW9JC2KYT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MPW9JC2KYT');
+  gtag('config', 'GT-NN6SWCG');
+</script>
+
+<!-- SEO -->
+<link rel="canonical" href="https://www.ensuredit.com/docs">
+<meta property="og:title" content="Developer Documentation | Ensuredit">
+<meta property="og:description" content="API and SDK documentation for Ensuredit's insurance infrastructure. Integrate embedded insurance, quoting, and distribution APIs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ensuredit.com/docs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="style.css">
+<script>
+  (function(){var t=localStorage.getItem('ensuredit-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<style>
+  .docs-frame-wrap {
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    background: var(--bg);
+    position: relative;
+  }
+  .docs-frame-wrap iframe {
+    width: 100%;
+    height: calc(100vh - 72px);
+    border: none;
+    display: block;
+  }
+  /* Hide footer on docs page — docs has its own footer inside */
+  .docs-page .footer { display: none; }
+  .docs-page .section { display: none; }
+</style>
+</head>
+<body class="docs-page">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="public/logo-white.svg" alt="Ensuredit" class="nav-logo-img"></a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="#" class="nav-link has-dropdown">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <div class="dropdown-menu">
+          <a href="ice.html"><span class="dd-icon">🏢</span><div><strong>ICE</strong><span>Insurance Commerce Engine</span></div></a>
+          <a href="enbed.html"><span class="dd-icon">⚙️</span><div><strong>Enbed</strong><span>Embedded Insurance</span></div></a>
+          <a href="enlyt.html"><span class="dd-icon">📊</span><div><strong>Enlyt</strong><span>Data Intelligence</span></div></a>
+          <a href="bi-platform.html"><span class="dd-icon">📈</span><div><strong>BI & Sales Ops</strong><span>Intelligence + Distribution</span></div></a>
+          <a href="screenguard.html"><span class="dd-icon">🛡️</span><div><strong>ScreenGuard</strong><span>AML & Sanctions Screening</span></div></a>
+          <a href="ai-agents.html"><span class="dd-icon">🤖</span><div><strong>AI Agents</strong><span>Autonomous Operations</span></div></a>
+        </div>
+      </div>
+      <a href="index.html#markets" class="nav-link">Markets</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Request Demo</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+    <button class="mobile-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <div class="mobile-menu-inner">
+    <a href="index.html">Home</a>
+    <div class="mobile-section-label">Platform</div>
+    <a href="ice.html">ICE — Insurance Commerce Engine</a>
+    <a href="enbed.html">Enbed — Embedded Insurance</a>
+    <a href="enlyt.html">Enlyt — Data Intelligence</a>
+    <a href="bi-platform.html">BI & Sales Ops</a>
+    <a href="screenguard.html">ScreenGuard — AML & Sanctions</a>
+    <a href="ai-agents.html">AI Agents</a>
+    <div class="mobile-section-label">Company</div>
+    <a href="about.html">About Us</a>
+    <a href="docs.html">API Documentation</a>
+    <a href="contact.html">Contact</a>
+    <button class="mobile-theme-toggle">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <span class="label-light">Switch to Light Mode</span>
+      <span class="label-dark">Switch to Dark Mode</span>
+    </button>
+  </div>
+</div>
+
+<!-- DOCS IFRAME -->
+<div class="docs-frame-wrap">
+  <iframe src="docs/" id="docs-frame" title="Ensuredit Developer Documentation"></iframe>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
