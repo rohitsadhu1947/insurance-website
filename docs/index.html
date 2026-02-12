@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ensuredit — Developer Documentation</title>
+  <meta name="description" content="API and SDK documentation for Ensuredit's insurance infrastructure platform. Integrate embedded insurance, quoting, underwriting, and distribution APIs.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.ensuredit.com/public/favicon-32.png">
+
+  <!-- Docsify themes -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Ensuredit brand colors */
+      --theme-color: #4F6EF7;
+      --base-background-color: #0A0E27;
+      --base-color: #C8CDD8;
+
+      /* Sidebar */
+      --sidebar-background: #070A1E;
+      --sidebar-nav-link-color: #8890A6;
+      --sidebar-nav-link-color--active: #4F6EF7;
+      --sidebar-nav-link-font-weight--active: 600;
+      --sidebar-name-color: #ffffff;
+      --sidebar-name-font-weight: 700;
+      --sidebar-border-color: rgba(79,110,247,0.1);
+      --sidebar-width: 280px;
+
+      /* Content */
+      --content-max-width: 900px;
+      --heading-color: #ffffff;
+      --heading-font-weight: 700;
+      --strong-color: #ffffff;
+      --link-color: #4F6EF7;
+      --link-color--hover: #7B93F7;
+
+      /* Code */
+      --code-font-family: 'JetBrains Mono', monospace;
+      --code-font-size: 0.85em;
+      --code-inline-background: rgba(79,110,247,0.1);
+      --code-inline-color: #A0B4FF;
+      --code-block-background: #0D1233;
+      --code-block-border-radius: 10px;
+      --code-block-padding: 1.2em;
+
+      /* Cover */
+      --cover-background-color: #0A0E27;
+      --cover-heading-color: #ffffff;
+      --cover-color: #8890A6;
+      --cover-button-background: #4F6EF7;
+      --cover-button-color: #ffffff;
+
+      /* Table */
+      --table-head-background: rgba(79,110,247,0.08);
+      --table-head-color: #A0B4FF;
+      --table-body-border-color: rgba(79,110,247,0.08);
+      --table-cell-border-color: rgba(79,110,247,0.06);
+
+      /* Blockquote */
+      --blockquote-border-color: #4F6EF7;
+      --blockquote-background: rgba(79,110,247,0.04);
+      --blockquote-color: #8890A6;
+
+      /* Notice / Alert */
+      --notice-tip-border-color: #4F6EF7;
+      --notice-important-border-color: #F59E0B;
+    }
+
+    /* ====== Global ====== */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* ====== Sidebar ====== */
+    .sidebar {
+      border-right: 1px solid rgba(79,110,247,0.08);
+    }
+
+    .sidebar .app-name {
+      padding: 24px 20px 16px;
+    }
+
+    .sidebar .app-name img {
+      height: 28px;
+      width: auto;
+    }
+
+    .sidebar-nav > ul > li > a {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 16px;
+    }
+
+    .sidebar-nav li > a {
+      padding: 6px 0;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-nav li > a:hover {
+      color: #ffffff;
+    }
+
+    .sidebar-nav li.active > a {
+      color: var(--theme-color);
+      font-weight: 600;
+    }
+
+    /* ====== Content ====== */
+    .markdown-section {
+      padding: 40px 48px 60px;
+    }
+
+    .markdown-section h1 {
+      font-size: 2.2em;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      border-bottom: 2px solid rgba(79,110,247,0.15);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .markdown-section h2 {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(79,110,247,0.08);
+    }
+
+    .markdown-section h3 {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #A0B4FF;
+      margin-top: 32px;
+    }
+
+    /* Method badges */
+    .markdown-section code {
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+
+    /* Tables */
+    .markdown-section table {
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    .markdown-section table th {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .markdown-section table td {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+
+    /* Code blocks */
+    .markdown-section pre {
+      border: 1px solid rgba(79,110,247,0.1);
+      position: relative;
+    }
+
+    .markdown-section pre > code {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* HTTP Method tags */
+    .method-get, .method-post, .method-put, .method-delete {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.5px;
+      margin-right: 8px;
+    }
+    .method-get { background: rgba(16,185,129,0.15); color: #34D399; }
+    .method-post { background: rgba(79,110,247,0.15); color: #7B93F7; }
+    .method-put { background: rgba(245,158,11,0.15); color: #FBBF24; }
+    .method-delete { background: rgba(239,68,68,0.15); color: #F87171; }
+
+    /* Version badge */
+    .badge-new {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(16,185,129,0.15);
+      color: #34D399;
+      letter-spacing: 0.5px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    /* ====== Cover Page ====== */
+    section.cover {
+      background: #0A0E27 !important;
+      background-image:
+        linear-gradient(rgba(79,110,247,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,110,247,0.03) 1px, transparent 1px) !important;
+      background-size: 50px 50px !important;
+    }
+
+    section.cover .cover-main {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section.cover h1 {
+      font-size: 3em;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 0;
+    }
+
+    section.cover h1 span {
+      color: var(--theme-color);
+    }
+
+    section.cover blockquote p {
+      font-size: 1.3em;
+      font-weight: 300;
+      color: #8890A6;
+    }
+
+    section.cover .cover-main > p:last-of-type a {
+      border-radius: 8px;
+      padding: 12px 32px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    section.cover .cover-main > p:last-of-type a:first-child {
+      background: #4F6EF7 !important;
+      border: none !important;
+      color: #fff !important;
+      box-shadow: 0 4px 20px rgba(79,110,247,0.3);
+    }
+
+    section.cover .cover-main > p:last-of-type a:first-child:hover {
+      background: #3D5AF1 !important;
+      box-shadow: 0 6px 28px rgba(79,110,247,0.4);
+    }
+
+    section.cover .cover-main > p:last-of-type a:last-child {
+      border: 1px solid rgba(79,110,247,0.3) !important;
+      color: #7B93F7 !important;
+      background: transparent !important;
+    }
+
+    section.cover .cover-main > p:last-of-type a:last-child:hover {
+      border-color: #4F6EF7 !important;
+      color: #ffffff !important;
+    }
+
+    /* Cover logo */
+    section.cover img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* ====== Scrollbar ====== */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(79,110,247,0.2);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(79,110,247,0.4);
+    }
+
+    /* ====== Search ====== */
+    .search input {
+      background: rgba(79,110,247,0.06) !important;
+      border: 1px solid rgba(79,110,247,0.12) !important;
+      border-radius: 8px !important;
+      color: #C8CDD8 !important;
+      font-family: 'Inter', sans-serif !important;
+      padding: 10px 14px !important;
+    }
+
+    .search input::placeholder {
+      color: rgba(255,255,255,0.25) !important;
+    }
+
+    .search .matching-post {
+      border-bottom-color: rgba(79,110,247,0.08) !important;
+    }
+
+    /* ====== Footer ====== */
+    .docsify-footer {
+      border-top: 1px solid rgba(79,110,247,0.08);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Loading documentation...</div>
+
+  <script>
+    window.$docsify = {
+      name: '<img src="https://en-commons.s3.ap-south-1.amazonaws.com/logos/ensuredit.png" alt="Ensuredit" style="height:28px;filter:brightness(0) invert(1)"> <span style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:400;margin-left:4px;">docs</span>',
+      nameLink: '/',
+      repo: false,
+      loadSidebar: true,
+      loadNavbar: true,
+      coverpage: true,
+      onlyCover: false,
+      auto2top: true,
+      maxLevel: 3,
+      subMaxLevel: 2,
+      notFoundPage: true,
+      search: {
+        placeholder: 'Search documentation...',
+        noData: 'No results found',
+        paths: 'auto',
+        depth: 3
+      },
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: true
+      },
+      footer: {
+        copy: '&copy; 2026 Ensuredit Technologies. All rights reserved.',
+        auth: '',
+        pre: '<hr/>',
+        style: 'text-align:center;font-size:13px;color:rgba(255,255,255,0.25);'
+      },
+      pagination: {
+        previousText: '← Previous',
+        nextText: 'Next →',
+        crossChapter: true,
+        crossChapterText: true
+      }
+    }
+  </script>
+
+  <!-- Docsify -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-footer-enh@1/dist/docsify-footer.min.js"></script>
+
+  <!-- Syntax Highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-swift.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-groovy.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-xml-doc.min.js"></script>
+</body>
+</html>
