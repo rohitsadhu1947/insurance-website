@@ -37,8 +37,8 @@ The ICE SDK will provide a drop-in insurance purchasing experience for **Health*
 
 You can build a complete insurance purchasing flow using the ICE REST APIs:
 
-- [ICE — Health Insurance API](/api/ice/Health/v0)
-- [Motor Insurance API](/api/en-gateway/Motor/motor)
+- [ICE — Health Insurance API](api/ice/Health/v0)
+- [Motor Insurance API](api/en-gateway/Motor/motor)
 
 These APIs provide the full journey from quote generation to policy issuance. The ICE SDK will wrap these APIs into pre-built UI components.
 
@@ -46,6 +46,6 @@ These APIs provide the full journey from quote generation to policy issuance. Th
 
 ## Stay Updated
 
-- Check the [Changelog](/resources/changelog) for SDK release announcements
+- Check the [Changelog](resources/changelog) for SDK release announcements
 - Contact us at [tech@ensuredit.com](mailto:tech@ensuredit.com) for early access
 - Visit [ensuredit.com](https://ensuredit.com) for the latest updates

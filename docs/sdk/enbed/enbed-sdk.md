@@ -35,7 +35,7 @@ The Enbed SDK handles the entire purchasing flow — product display, proposal f
 | Buy via Wallet | POST | `/enbed/v1/products/buy/wallet` |
 | Download Certificate | GET | `/enbed/v1/policy-store/{tranId}/certificate/download` |
 
-See the [Enbed API Reference](/api/enbed/v1) for full endpoint documentation.
+See the [Enbed API Reference](api/enbed/v1) for full endpoint documentation.
 
 ---
 

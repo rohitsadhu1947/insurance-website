@@ -84,12 +84,9 @@
     }
 
     .sidebar .app-name {
-      padding: 24px 20px 16px;
-    }
-
-    .sidebar .app-name img {
-      height: 28px;
-      width: auto;
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid rgba(79,110,247,0.08);
+      margin-bottom: 8px;
     }
 
     .sidebar-nav > ul > li > a {
@@ -334,12 +331,13 @@
 
   <script>
     window.$docsify = {
-      name: '<img src="https://en-commons.s3.ap-south-1.amazonaws.com/logos/ensuredit.png" alt="Ensuredit" style="height:28px;filter:brightness(0) invert(1)"> <span style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:400;margin-left:4px;">docs</span>',
-      nameLink: '/',
+      name: '<span style="font-size:15px;font-weight:700;color:#fff;">API</span> <span style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:400;">Documentation</span>',
+      nameLink: '#/',
       repo: false,
       loadSidebar: true,
-      loadNavbar: true,
+      loadNavbar: false,
       coverpage: false,
+      basePath: './',
       auto2top: true,
       maxLevel: 3,
       subMaxLevel: 2,

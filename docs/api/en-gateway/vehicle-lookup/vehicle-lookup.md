@@ -37,7 +37,7 @@ Ideal for insurance companies, lending platforms, fleet management tools, and go
 
 ## Authentication
 
-All endpoints require a Bearer token. See the [Authentication Guide](/guide/authentication).
+All endpoints require a Bearer token. See the [Authentication Guide](guide/authentication).
 
 ```
 Authorization: Bearer <access_token>

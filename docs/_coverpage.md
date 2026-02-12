@@ -9,5 +9,5 @@
 - **Vehicle & Motor APIs** — Registration lookup, challan data, motor quoting
 - **SDKs** — Drop-in widgets for Android, iOS, and Web
 
-[Get Started](/)
-[API Reference](/api/api)
+[Get Started](README)
+[API Reference](api/api)

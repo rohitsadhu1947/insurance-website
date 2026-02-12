@@ -56,7 +56,7 @@ The motor insurance journey follows these steps:
 }
 ```
 
-See the [Authentication Guide](/guide/authentication) for details.
+See the [Authentication Guide](guide/authentication) for details.
 
 ---
 
@@ -98,7 +98,7 @@ Pre-fill quote form using the vehicle registration number. This step is **option
 }
 ```
 
-See the [Vehicle Lookup API](/api/en-gateway/vehicle-lookup/vehicle-lookup) for full response details.
+See the [Vehicle Lookup API](api/en-gateway/vehicle-lookup/vehicle-lookup) for full response details.
 
 ---
 

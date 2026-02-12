@@ -8,8 +8,8 @@ Drop-in components for integrating Ensuredit into your applications.
 
 | SDK | Platforms | Status |
 |-----|-----------|--------|
-| [**Enbed SDK**](/sdk/enbed/enbed-sdk) | Android, iOS, Web | Live |
-| [**ICE SDK**](/sdk/ice/ice-sdk) | Web | Coming Soon |
+| [**Enbed SDK**](sdk/enbed/enbed-sdk) | Android, iOS, Web | Live |
+| [**ICE SDK**](sdk/ice/ice-sdk) | Web | Coming Soon |
 
 ---
 
@@ -22,4 +22,4 @@ The Enbed SDK provides pre-built UI widgets that handle the entire insurance pur
 - **iOS** — Swift + WKWebView
 - **Web** — JavaScript widget
 
-[View Enbed SDK Documentation →](/sdk/enbed/enbed-sdk)
+[View Enbed SDK Documentation →](sdk/enbed/enbed-sdk)

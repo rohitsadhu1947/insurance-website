@@ -16,11 +16,11 @@ Whether you're embedding insurance at checkout, building a full insurance market
 
 | Product | Description | Link |
 |---------|-------------|------|
-| **Enbed API** | Embed insurance products into any checkout flow. Get quotes, create proposals, bind policies. | [View Docs →](/api/enbed/v1) |
-| **ICE API** | Full insurance buying journey — health, motor, life. Quotes, proposals, payments. | [View Docs →](/api/ice/Health/v0) |
-| **Vehicle Lookup** | Retrieve vehicle registration details, insurance info, and challan data. | [View Docs →](/api/en-gateway/vehicle-lookup/vehicle-lookup) |
-| **Motor API** | Motor insurance quoting and policy purchase journey. | [View Docs →](/api/en-gateway/Motor/motor) |
-| **Enbed SDK** | Drop-in widget for Android, iOS, and Web. Insurance in 10 lines of code. | [View Docs →](/sdk/enbed/enbed-sdk) |
+| **Enbed API** | Embed insurance products into any checkout flow. Get quotes, create proposals, bind policies. | [View Docs →](api/enbed/v1) |
+| **ICE API** | Full insurance buying journey — health, motor, life. Quotes, proposals, payments. | [View Docs →](api/ice/Health/v0) |
+| **Vehicle Lookup** | Retrieve vehicle registration details, insurance info, and challan data. | [View Docs →](api/en-gateway/vehicle-lookup/vehicle-lookup) |
+| **Motor API** | Motor insurance quoting and policy purchase journey. | [View Docs →](api/en-gateway/Motor/motor) |
+| **Enbed SDK** | Drop-in widget for Android, iOS, and Web. Insurance in 10 lines of code. | [View Docs →](sdk/enbed/enbed-sdk) |
 
 ---
 
